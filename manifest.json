@@ -1,8 +1,9 @@
 {
-  "name":  "Угадай Слово",
+  "name": "Угадай Слово",
   "short_name": "Угадай",
+  "version": "2.0.0",
   "description": "Игра для вечеринок - объясняй слова! ",
-  "start_url": "/index.html",
+  "start_url": "/index.html?v=2",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#F5A623",
@@ -21,4 +22,5 @@
       "purpose":  "any maskable"
     }
   ]
+  
 }

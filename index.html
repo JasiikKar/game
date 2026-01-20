@@ -6,8 +6,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="manifest.json">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="apple-touch-icon" href="icon-192.png">
+
     <title>Угадай Слово</title>
     <style>
         * {
@@ -621,6 +624,7 @@
                 <p class="section-title">Команды</p>
                 <input type="text" id="team-input" placeholder="Название команды" maxlength="20">
                 <button class="secondary" onclick="addTeam()">Добавить</button>
+                <button class="secondary" onclick="addQuickTeams()" style="margin-top: 8px;">Team A & Team B</button>
             </div>
             
             <div id="teams-container" class="team-list"></div>
@@ -942,6 +946,14 @@
             updateStartButton();
         }
 
+        function addQuickTeams() {
+            teams = [];
+            teams.push({ name: 'Team A', score: 0 });
+            teams.push({ name: 'Team B', score: 0 });
+            renderTeams();
+            updateStartButton();
+        }
+
         function updateStartButton() {
             document.getElementById('start-game-btn').disabled = teams.length < 2;
         }
@@ -1123,9 +1135,7 @@
             updateStartButton();
             showScreen(document.getElementById('setup-screen'));
         }
-        if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }
+        
     </script>
 </body>
 </html>
